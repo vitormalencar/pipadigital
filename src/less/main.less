@@ -1,0 +1,816 @@
+@import "util.less";
+@import "transform.less";
+@import "fonts.less";
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+    font-family: 'helv';
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+::-moz-selection {
+    background: #06b3e6;
+    text-shadow: none;
+}
+
+::selection {
+    background: #06b3e6;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6, p, ul, li { margin: 0; padding: 0; } 
+a { text-decoration: none; .easeoutexpo; }
+a.full { width: 100%; height: 100%; display: block; }
+ul, li { list-style-type: none; }
+
+*, *:before, *:after { .border-box; }
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.show { opacity: 1; }
+.hide { opacity: 0; }
+
+
+@azul: #06b3e6;
+@cinza: #2d2d2d;
+
+
+#content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    
+    #logo {
+        width: 280px;
+        height: 170px;
+        position: fixed;
+        top: 0; left: 0;
+        z-index: 9999;
+
+        #logo-container {
+            width: 169px;
+            height: 42px;
+            position: absolute;
+            .centerObj(169, 42);
+            z-index: 2;
+    
+            .logo-svg {
+                width: 169px;
+                height: 142px;
+            }
+
+        }
+
+        a {
+            width: 100%; height: 100%;
+            position: absolute; top: 0; left: 0;
+            z-index: 3;
+        }
+
+        .shadow {
+            width: 272px;
+            height: 196px;
+            background: url(../img/logo-shadow.png) no-repeat 0 0;
+            position: absolute;
+            top: 0; left: 0;
+        }
+        .plate {
+            width: 100%;
+            height: 100%;
+            background: @azul;
+            position: absolute;
+            top: 0; left: 0;
+            z-index: 1;
+        }
+    }
+    //logo
+    
+    
+    #main-nav {
+        width: 190px;
+        height: 280px;
+        position: fixed;
+        top: 170px; left: 0;
+        z-index: 9999;
+        display: block;
+
+        ul {
+            position: relative;
+            margin: 56px 0 0 56px;
+
+            li {
+                width: 100%;
+                display: block;
+
+                h4 {
+                    .knockout;
+                    font-size: 30px;
+                    color: white;
+                    letter-spacing: -1px;
+
+                    a {
+                        color: white;
+                        .easeoutexpo;
+                        &:hover {
+                            color: lighten(@cinza, 50%);
+                        }
+                    }
+                }
+
+                .submenu {
+                    width: 100%;
+                    height: 0px;
+                    display: block;
+                    margin: 0;
+                    overflow: hidden;
+
+                    li {
+                        width: auto;
+                        display: table;
+                        clear: both;
+                        position: relative;
+
+                        &:first-child { margin-top: 10px; }
+                        &:last-child { margin-bottom: 10px; }
+
+                        &:before {
+                            content: "";
+                            width: 0px;
+                            height: 1px;
+                            background: @cinza;
+                            position: absolute;
+                            top: 7px; left: 0;
+                            .easeoutexpo;
+                        }
+
+                        a {
+                            width: auto;
+                            display: table;
+                            font-family: 'helv';
+                            .font(14, lighten(@cinza, 20%), -1, normal, bold);
+                            line-height: 21px;
+                            .easeoutexpo;
+                            padding-left: 15px;
+                            &:hover {
+                                color: @azul;
+                            }
+                        }
+
+                        &.active {
+
+                            &:before { width: 10px; }
+
+                            a {
+                                color: @cinza;
+                                &:hover { color: @cinza; }
+                            }
+                        }
+
+                        &:hover {
+                            &:before { width: 10px; }
+                        }
+
+                    }
+                }
+
+            }
+        }
+
+        
+        &.pag-interna {
+
+            ul {
+
+                li {
+                    
+                    &.active {
+                        h4 a { color: @cinza; }
+                    }
+
+                    h4 a {
+                        color: lighten(@cinza, 50%);
+                        &:hover {
+                            color: @cinza;
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
+
+    }
+    //main-nav
+
+    
+    #load-content {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+
+        .blc-interno {
+            width: 90%;
+            float: right;
+            background: lighten(@cinza, 80%);
+
+
+            .info { 
+                width: 850px;
+                margin: 0 auto;
+
+                .title {
+                    .knockout;
+                    font-size: 60px;
+                    line-height: 45px;
+                }
+                .text {
+                    width: 100%;
+                    overflow: hidden;
+
+                    p {
+                        width: (50% / 3) - 20px;
+                        .font(14, white, 0, normal, normal);
+                        line-height: 24px;
+                    }
+                }
+            }
+
+        }
+
+    }
+    //load-content
+
+
+    @import "view_Home.less";
+    @import "view_Cultura.less";
+    @import "view_Trabalhos.less";
+    @import "view_Negocios.less";
+    @import "view_Contato.less";
+
+
+    #footer {
+        width: 100%;
+        display: table;
+        padding: 80px 0;
+
+            
+        .footer-wrp {
+            width: 100%;
+            padding: 0 140px;
+
+            .social {
+                width: 100%;
+                overflow: hidden;
+                border-bottom: 1px solid darken(white, 30%);
+                padding-bottom: 24px;
+                margin-bottom: 34px;
+
+                ul {
+                    width: auto;
+                    display: table;
+                    float: left;
+
+                    li {
+                        width: auto;
+                        display: table;
+                        float: left;
+                        margin-right: 12px;
+
+                        a {
+                            font-family: 'icomoon';
+                            font-size: 25px;
+                            color: @cinza;
+                            .easeoutexpo;
+                            &:hover {
+                                color: lighten(@cinza, 30%);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .copy-menu {
+                width: 100%;
+                overflow: hidden;
+                .font(14, black, 0, normal, bold);
+
+                .copy {
+                    width: auto;
+                    float: left;
+                }
+                .footer-nav {
+                    width: auto;
+                    float: right;
+
+                    li {
+                        width: auto;
+                        float: left;
+                        margin-left: 12px;
+
+                        &:after {
+                            content: "/";
+                            float: right;
+                            margin-left: 10px;
+                        }
+
+                        &:last-child:after { content: ''; } 
+
+                        a {
+                            color: black;
+                            .easeoutexpo;
+                            &:hover {
+                                color: lighten(black, 40%);
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+
+    }
+    //footer
+
+
+
+}
+
+
+
+
+
+
+/*
+Version: 1.0
+Author: Nauris Kolāts | Streamline
+Author URI: http://www.majas-lapu-izstrade.lv
+*/
+
+img.grayscale {
+    filter: url('../js/filters.svg#grayscale'); /* Firefox 3.5+ */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(1);  //Webkit Nightlies & Google Chrome Canary 
+}
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+/* v1.0.5 */
+/* Core RS CSS file. 95% of time you shouldn't change anything here. */
+.royalSlider {
+    width: 100%;
+    height: auto;
+    position: relative;
+    direction: ltr;
+}
+.royalSlider > * {
+    float: left;
+}
+
+.rsWebkit3d .rsSlide {
+    -webkit-transform: translateZ(0);
+}
+
+
+.rsWebkit3d .rsSlide,
+.rsWebkit3d .rsContainer,
+.rsWebkit3d .rsThumbs,
+.rsWebkit3d .rsPreloader,
+.rsWebkit3d img,
+.rsWebkit3d .rsOverflow,
+.rsWebkit3d .rsBtnCenterer,
+.rsWebkit3d .rsAbsoluteEl,
+.rsWebkit3d .rsABlock,
+.rsWebkit3d .rsLink {
+    -webkit-backface-visibility: hidden;
+}
+.rsFade.rsWebkit3d .rsSlide,
+.rsFade.rsWebkit3d img,
+.rsFade.rsWebkit3d .rsContainer {
+    -webkit-transform: none;
+}
+.rsOverflow {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.rsVisibleNearbyWrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.rsVisibleNearbyWrap .rsOverflow {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+}
+.rsContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+.rsArrow,
+.rsThumbsArrow {
+    cursor: pointer;
+}
+
+.rsThumb {
+    float: left;
+    position: relative;
+}
+
+
+.rsArrow,
+.rsNav,
+.rsThumbsArrow {
+    opacity: 1;
+    -webkit-transition:opacity 0.3s linear;
+    -moz-transition:opacity 0.3s linear;
+    -o-transition:opacity 0.3s linear;
+    transition:opacity 0.3s linear;
+}
+.rsHidden {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition:visibility 0s linear 0.3s,opacity 0.3s linear;
+    -moz-transition:visibility 0s linear 0.3s,opacity 0.3s linear;
+    -o-transition:visibility 0s linear 0.3s,opacity 0.3s linear;
+    transition:visibility 0s linear 0.3s,opacity 0.3s linear;
+}
+
+
+.rsGCaption {
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+/* Fullscreen options, very important ^^ */
+.royalSlider.rsFullscreen {
+    position: fixed !important;
+    height: auto !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 2147483647 !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+}
+
+.royalSlider .rsSlide.rsFakePreloader {
+    opacity: 1 !important;
+    -webkit-transition: 0s;
+    -moz-transition: 0s;
+    -o-transition:  0s;
+    transition:  0s;
+    display: none;
+}
+
+.rsSlide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    overflow: hidden;
+    
+    height: 100%;
+    width: 100%;
+}
+
+.royalSlider.rsAutoHeight,
+.rsAutoHeight .rsSlide {
+    height: auto;
+}
+
+.rsContent {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.rsPreloader {
+    position:absolute;
+    z-index: 0; 
+}
+
+.rsNav {
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.rsNavItem {
+    -webkit-tap-highlight-color:rgba(0,0,0,0.25);
+}
+
+.rsThumbs {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    z-index: 22;
+}
+.rsTabs {
+    float: left;
+    background: none !important;
+}
+.rsTabs,
+.rsThumbs {
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+
+.rsVideoContainer {
+    /*left: 0;
+    top: 0;
+    position: absolute;*/
+    /*width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    float: left;*/
+    width: auto;
+    height: auto;
+    line-height: 0;
+    position: relative;
+}
+.rsVideoFrameHolder {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #141414;
+    opacity: 0;
+    -webkit-transition: .3s;
+}
+.rsVideoFrameHolder.rsVideoActive {
+    opacity: 1;
+}
+.rsVideoContainer iframe,
+.rsVideoContainer video,
+.rsVideoContainer embed,
+.rsVideoContainer .rsVideoObj {
+    position: absolute;
+    z-index: 50;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+/* ios controls over video bug, shifting video */
+.rsVideoContainer.rsIOSVideo iframe,
+.rsVideoContainer.rsIOSVideo video,
+.rsVideoContainer.rsIOSVideo embed {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 44px;
+}
+
+.rsABlock {
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 15;
+    
+}
+
+img.rsImg {
+    max-width: none;
+}
+
+.grab-cursor {
+    cursor:url(grab.png) 8 8, move; 
+}
+
+.grabbing-cursor{ 
+    cursor:url(grabbing.png) 8 8, move;
+}
+
+.rsNoDrag {
+    cursor: auto;
+}
+
+.rsLink {
+    left:0;
+    top:0;
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:block;  
+    z-index: 20;
+    background: url(blank.gif);
+}

@@ -1,0 +1,175 @@
+define([
+	'views/nav/MainNavView',
+	'text!templates/trabalhos/trabalhosTemplate.html'
+], function (
+	MainNavView,
+	TrabalhosTemplate
+){
+
+	var TrabalhosView = Backbone.View.extend({
+
+		el: '#load-content',
+		TRABALHOS: '#Trabalhos',
+
+		getTemplate: function () { this.$el.html(TrabalhosTemplate); },
+
+		render: function () {
+
+			var mainNav = new MainNavView();
+			mainNav.render();
+			mainNav.pagInterna();
+			mainNav.itemActive('trabalhos');
+
+		},
+
+		lista: function (projeto) {
+
+			/* ITENS DA LISTA */
+			var self = this,
+				Lista = $(this.TRABALHOS).find('.lista'),
+				Loaded = $(this.TRABALHOS).find('.trabalho-loaded'),
+				item = Lista.find('li'),
+				itemCont = item.find('.content');
+
+			var p = projeto;
+
+			item.each(function (i, elem) {
+
+				var el = $(elem),
+					arrow = el.find('.arrow'),
+					dtl = el.find('.dtl');
+
+				TweenMax.set(el, { css: { transformPerspective: 1200 } });
+
+				el
+				.on('mouseover', function () {
+					TweenMax.to(arrow, 0.5, { width: 32, ease: Expo.easeOut });
+					TweenMax.to(dtl, 0.7, { width: '100%', ease: Expo.easeOut, delay: 0.1 });
+				})
+				.on('mouseleave', function () {
+					TweenMax.killTweensOf([arrow, dtl]);
+					TweenMax.to(arrow, 0.5, { width: 0, ease: Expo.easeOut });	
+					TweenMax.to(dtl, 0.7, { width: '0%', ease: Expo.easeOut, delay: 0.1 });
+				})
+				.on('click', function () {
+					console.log('BOTÃO-CLICADO!');
+				});
+
+
+			});
+
+
+			this.mostrarProjeto(projeto);
+
+
+		},
+
+		mostrarProjeto: function (id) {
+
+			var self = this,
+				Lista = $(this.TRABALHOS).find('.lista'),
+				Loaded = $(this.TRABALHOS).find('.trabalho-loaded'),
+				ITEM_ATIVO = Lista.find('li[data-projeto="'+id+'"]'),
+				ITEM_WIDTH = ITEM_ATIVO.width(),
+				ITEM_HEIGHT = ITEM_ATIVO.height(),
+				ITEM_TOP,
+				ITEM_LEFT,
+				ITEM_ATIVADO;
+
+			
+			//console.log('CARREGANDO PROJETO: ' + id);
+			$('body').css('overflow', 'auto');
+			TweenMax.set(Loaded, { css: { transformPerspective: 1200 } });
+			TweenMax.set([Loaded, Loaded.find('.wrp')], { opacity: 0, display: 'none' });
+			TweenMax.to('html, body', 1, { scrollTop: (ITEM_ATIVO.offset().top - 100), delay: 0.5, ease: Expo.easeOut, onComplete: initTransition });
+
+			function initTransition () {
+				
+				ITEM_TOP = ITEM_ATIVO.offset().top - $(document).scrollTop();
+				ITEM_LEFT = ITEM_ATIVO.offset().top - $(document).scrollLeft();
+
+				console.log(ITEM_TOP);
+				console.log(ITEM_LEFT);
+
+				localStorage.setItem('ITEM_ATIVO_TOP', ITEM_TOP);
+				localStorage.setItem('ITEM_ATIVO_LEFT', ITEM_LEFT);
+
+
+				TweenMax.set(Loaded, {
+					css: {
+						width: ITEM_WIDTH,
+						height: ITEM_HEIGHT,
+						top: (ITEM_TOP + 100),
+						left: ITEM_LEFT,
+						opacity: 1,
+						rotationY: -180,
+						scale: 0.6,
+						display: 'block'
+					}
+				});
+
+				TweenMax.set(Loaded.find('.wrp'), { display: 'block' });
+
+				TweenMax.to(ITEM_ATIVO, 0.6, { css: { scale: 0.6 }, delay: 1.2, ease: Expo.easeIn });
+				TweenMax.to(ITEM_ATIVO, 1.4, { css: { rotationY: 180, scale: 1 }, delay: 1.8, ease: Expo.easeOut });
+				TweenMax.to(Loaded, 1.4, {
+					css: {
+						width: Lista.width(),
+						height: window.innerHeight,
+						rotationY: 0,
+						scale: 1,
+						top: 0,
+						right: 0,
+						left: 'inherit'
+					},
+					delay: 1.9,
+					ease: Expo.easeOut
+				});
+				TweenMax.to(Loaded.find('.wrp'), 0.5, { opacity: 1, delay: 2.1, ease: Expo.easeOut });
+				$('body').css('overflow', 'hidden');
+
+			}
+
+		},
+
+		removerProjeto: function (id) {
+
+			var self = this,
+				Lista = $(this.TRABALHOS).find('.lista'),
+				Loaded = $(this.TRABALHOS).find('.trabalho-loaded'),
+				ITEM_ATIVO = Lista.find('li[data-projeto="'+id+'"]'),
+				ITEM_WIDTH = ITEM_ATIVO.width(),
+				ITEM_HEIGHT = ITEM_ATIVO.height(),
+				ITEM_TOP = localStorage.getItem('ITEM_ATIVO_TOP'),
+				ITEM_LEFT = localStorage.getItem('ITEM_ATIVO_LEFT');
+
+			console.log(ITEM_TOP);
+			console.log(ITEM_LEFT);
+
+			TweenMax.set(ITEM_ATIVO, { css: { scale: 0.6 } });
+
+			TweenMax.to(Loaded.find('.wrp'), 0.5, { opacity: 0, ease: Expo.easeOut });
+			TweenMax.to(Loaded, 1.4, {
+				css: {
+					width: ITEM_WIDTH,
+					height: ITEM_HEIGHT,
+					top: ITEM_TOP,
+					right: ITEM_LEFT,
+					left: 'inherit',
+					scale: 0.6
+				},
+				delay: 0.6,
+				ease: Expo.easeOut
+			});
+			TweenMax.to(Loaded, 1, { css: { rotationY: -180 }, delay: 1.5, ease: Expo.easeOut });
+			TweenMax.to(ITEM_ATIVO, 1, { css: { rotationY: 0, scale: 1 }, delay: 1.5, ease: Expo.easeOut });
+			$('body').css('overflow', 'auto');
+
+		}
+
+	})
+
+	return TrabalhosView;
+
+
+})

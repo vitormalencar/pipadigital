@@ -1,0 +1,176 @@
+/*
+
+	view_Negocios.less
+
+*/
+
+#Negocios {
+	position: relative;
+
+	#nosso-negocio {
+		width: 100%;
+		height: 710px;
+		background: @cinza url(../img/negocios-bg.jpg) no-repeat top center;
+		background-size: cover;
+
+		.wrp {
+			width: 100%;
+			height: 100%;
+			position: relative;
+
+			.assista {
+				width: 100px;
+				position: absolute;
+				bottom: 216px; left: 318px;
+				*{ .easeoutexpo; }
+
+
+				.icon {
+					font-family: 'icomoon';
+					font-size: 52px;
+					color: white;
+					float: left;
+					width: auto;
+					display: table;
+					line-height: 45px;
+				}
+				h4 {
+					width: auto;
+					display: table;
+					float: right;
+					a {
+						.knockout;
+						font-size: 30px;
+						color: white;
+					}
+				}
+
+				&:hover {
+					.icon, h4 a { color: @azul; }
+				}
+
+			}
+
+			.info {
+				padding-top: 180px;
+
+				.title { color: white; }
+				.text {
+					margin-top: 50px;
+
+					p {
+						width: (100% / 3);
+						padding-right: 50px;
+						float: left;
+
+						span { font-weight: bold; }
+					}
+				}
+			}
+
+		}
+	}
+	//nosso-negocio
+
+
+	#modelo {
+		width: 100%;
+		padding: 90px 0;
+		background: darken(@cinza, 10%);
+
+		.wrp {
+			width: 100%;
+			height: 100%;
+			position: relative;
+
+			.lista-modelo {
+				width: auto;
+				margin: 0 auto;
+				display: table;
+
+				li {
+					width: 160px;
+					display: table;
+					float: left;
+					margin-right: 40px;
+
+					&:last-child{ margin-right: 0; }
+
+					h4 {
+						.knockout;
+						font-size: 24px;
+						color: @azul;
+						line-height: 20px;
+					}
+					ul {
+						width: 100%;
+						margin-top: 20px;
+
+						li {
+							width: 100%;
+							display: block;
+							.font(16, white, -1, normal, bold);
+							line-height: 18px;
+						}
+					}
+				}
+			}
+
+		}
+	}
+	
+
+	#como-fazemos {
+		width: 100%;
+		padding: 90px 0;
+
+		.wrp {
+			width: 100%;
+			height: 100%;
+
+			.info .title {
+				color: @azul;
+				padding-top: 90px;
+			}
+
+			.lista {
+				width: auto;
+				display: table;
+				margin: 100px auto 0;
+
+				li {
+					width: auto;
+					display: table;
+					overflow: hidden;
+					margin-bottom: 50px;
+
+					svg {
+						width: 140px;
+						height: 140px;
+						float: left;
+						margin-right: 30px;
+					}
+					h3 {
+						.font(30, darken(white, 50%), -2, normal, bold);
+						line-height: 24px;
+						float: left;
+						width: 180px;
+						display: table;
+						margin-right: 40px;
+						padding-top: 5px;
+						text-align: center;
+					}
+					p {
+						width: 700px;
+						float: left;
+						.font(14, darken(white, 60%), 0, normal, normal);
+						line-height: 24px;
+					}
+				}
+			}
+
+		}
+	}
+
+
+}

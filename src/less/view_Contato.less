@@ -1,0 +1,192 @@
+/*
+
+	view_Contato.less
+
+*/
+
+#Contato {
+	width: 100%;
+
+	#header {
+		width: 100%;
+		padding: 150px 0;
+		position: relative;
+		background: @cinza;
+		overflow: hidden;
+
+		.wrp {
+			width: 100%;
+			height: 100%;
+			position: relative;
+
+			.info {
+				
+
+				.title {
+					width: 255px;
+					float: left;
+					color: white;
+				}
+				.text {
+					width: auto;
+					float: left;
+					margin-left: 50px;
+					overflow: hidden;
+
+					.block {
+						width: auto;
+						display: table;
+						float: left;
+						margin-right: 20px;
+
+						&:last-child{ margin-right: 0; }
+
+						p {
+							span {
+								font-weight: bold;
+							}
+						}
+						a {
+							color: white;
+							font-weight: bold;
+						}
+						.skype {
+							width: auto;
+							display: table;
+							margin-top: 35px;
+
+							p {
+								width: auto;
+								display: table;
+								float: left;
+								position: relative;
+
+								&:after {
+									content: "";
+									width: 15px;
+									height: 1px;
+									background: white;
+									position: absolute;
+									top: 10px; right: -25px;
+								}
+
+							}
+							a {
+								float: left;
+								margin-left: 34px;
+								&:hover { color: @azul; }
+								font-size: 14px;
+								margin-top: 2px;
+							}
+						}
+					}
+				}
+			}
+
+		}
+	}
+
+
+	#emails {	
+		width: 100%;
+		background: darken(white, 10%);
+		padding: 120px 0;
+
+		.wrp {
+			width: 100%;
+			height: 100%;
+			position: relative;
+
+			.lista {
+				width: auto;
+				display: table;
+				margin: 0 auto;
+
+				li {
+					width: 240px;
+					float: left;
+					margin-right: 30px;
+
+					&:last-child{ margin-right: 0; }
+
+					h4 {
+						.knockout;
+						font-size: 24px;
+						color: @azul;
+						line-height: 20px;
+						width: 60%;
+						height: 50px;
+					}
+					a {
+						width: 100%;
+						display: block;
+						.font(16, darken(@cinza, 10%), 0, normal, bold);
+						line-height: 18px;
+						margin-top: 20px;
+
+						&:hover {
+							color: @azul;
+						}
+
+					}
+				}
+			}
+
+		}
+	}
+
+	#slide {
+		width: 100%;
+		height: 780px;
+
+		.wrp {
+			width: 100%;
+			height: 100%;
+		
+			.slider {
+				width: 100%;
+				height: 780px;
+
+				.item {
+					width: 100%;
+					height: 780px;
+					position: relative;
+
+					&.sld-1 {
+						background: url(../img/contato-sld-1.jpg) no-repeat 0 0;
+						background-size: cover; 
+					}
+
+				}
+
+				.rsBullets {
+					width: 84px;
+					position: absolute;
+					z-index: 7000;
+					bottom: 60px; left: 50%;
+					margin-left: (-84px / 2);
+
+					.rsBullet {
+						width: 10px;
+						height: 10px;
+						background: darken(white, 10%);
+						border-radius: 50px; 
+						float: left;
+						margin-right: 12px;
+
+
+						&:last-child {
+							margin-right: 0;
+						}
+						&.rsNavSelected {
+							background: white;
+						}
+					}
+				}
+
+			}
+
+		}
+	}
+
+}
