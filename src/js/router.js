@@ -37,11 +37,13 @@ define([
 	var initialize = function () {
 
 		var app_router = new AppRouter;
+		localStorage.setItem('TRABALHOS_VIEW_FIX', 0);
 
 		app_router.on('route:home', function() {
 			
 			var homeView = new HomeView();
 			homeView.render();
+			localStorage.setItem('TRABALHOS_VIEW_FIX', 0);
 
 		});
 
@@ -49,6 +51,7 @@ define([
 
 			var culturaView = new CulturaView();
 			culturaView.render();
+			localStorage.setItem('TRABALHOS_VIEW_FIX', 0);
 
 		});	
 
@@ -56,6 +59,7 @@ define([
 
 			var negociosView = new NegociosView();
 			negociosView.render();
+			localStorage.setItem('TRABALHOS_VIEW_FIX', 0);
 
 		});	
 
@@ -63,26 +67,50 @@ define([
 
 			var contatoView = new ContatoView();
 			contatoView.render();
+			localStorage.setItem('TRABALHOS_VIEW_FIX', 0);
 
 		});
 
 		app_router.on('route:trabalhos', function (projeto) {
 
-			var trabalhosView = new TrabalhosView();
-			var projetoId;
-			trabalhosView.render();
+			var trabalhosView = new TrabalhosView(),
+				primeiroAcesso = localStorage.getItem('TRABALHOS_VIEW_FIX');
 
-			if($('#load-content').html() == '') {
+			console.log(projeto);
+
+			if(primeiroAcesso == 0) {
+
 				trabalhosView.getTemplate();
-			}else{
-				if(projeto != undefined) {
-					localStorage.setItem('PROJETO_ID', projeto);
-					trabalhosView.lista(projeto);
-				}else{
-					trabalhosView.removerProjeto(localStorage.getItem('PROJETO_ID'));
-				}
-			}
+				trabalhosView.render();
+				localStorage.setItem('TRABALHOS_VIEW_FIX', 1);
 
+				if($('#load-content').html() == '') {
+					trabalhosView.getTemplate();
+					trabalhosView.render();
+				}else{
+					if(projeto != undefined) {
+						localStorage.setItem('PROJETO_ID', projeto);
+						trabalhosView.mostrarProjeto(projeto);
+					}else{
+						trabalhosView.removerProjeto(localStorage.getItem('PROJETO_ID'));
+					}
+				}
+
+			}else{
+
+				if($('#load-content').html() == '') {
+					trabalhosView.getTemplate();
+					trabalhosView.render();
+				}else{
+					if(projeto != undefined) {
+						localStorage.setItem('PROJETO_ID', projeto);
+						trabalhosView.mostrarProjeto(projeto);
+					}else{
+						trabalhosView.removerProjeto(localStorage.getItem('PROJETO_ID'));
+					}
+				}
+				
+			}
 
 
 		});

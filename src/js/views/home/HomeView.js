@@ -142,20 +142,13 @@ define([
 
 				img.addClass('grayscale').css({ opacity: 0.20 });
 
-				if(requestAnimationFrame) {
+				t.on('mouseover', function () {
+					requestAnimationFrame(mouseover);
+				})
 
-					window.requestAnimationFrame = requestAnimationFrame;
-					t.on('mouseover', function () {
-						mouseover();
-						anim();
-					})
-
-					.on('mouseleave', function () {
-						mouseleave();
-						anim();						
-					});
-
-				}
+				.on('mouseleave', function () {
+					requestAnimationFrame(mouseleave);
+				});
 
 				function mouseover () {
 					posts.find('.posts-list.over').removeClass('over');
@@ -173,10 +166,6 @@ define([
 					TweenMax.to(t, 0.9, { boxShadow: 'rgb(0, 0, 0) 0 0 0px 0px', ease: Expo.easeOut });
 					TweenMax.to(infoDtl, 0.5, { width: '0%', ease: Expo.easeOut });
 					TweenMax.to(img, 1, { marginLeft: imgLeftPos });
-				}
-
-				function anim () {
-					requestAnimationFrame(anim);
 				}
 
 			});

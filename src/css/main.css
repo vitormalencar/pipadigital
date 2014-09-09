@@ -1129,6 +1129,7 @@ li {
 }
 #content #Trabalhos .lista {
   width: 100%;
+  overflow: hidden;
 }
 #content #Trabalhos .lista ul {
   width: auto;

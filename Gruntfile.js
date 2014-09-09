@@ -53,9 +53,8 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-    grunt.registerTask('default', ['browserSync', 'watch', 'imagemin', 'less']);
+    grunt.registerTask('default', ['browserSync', 'watch', 'less']);
 
 
 }
