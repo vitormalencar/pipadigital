@@ -167,6 +167,7 @@ li {
 	view_Home.less
 
 */
+  /* (media-queries) */
   /*
 
 	view_Cultura.less
@@ -235,7 +236,7 @@ li {
   z-index: 1;
 }
 #content #main-nav {
-  width: 190px;
+  width: 168px;
   height: 280px;
   position: fixed;
   top: 170px;
@@ -355,6 +356,14 @@ li {
 }
 #content #main-nav ul li .submenu li:hover:before {
   width: 10px;
+}
+#content #main-nav ul li.voltar {
+  position: absolute;
+  top: 0;
+  left: -14px;
+  background: url(../img/nav-icon-arrow.png) no-repeat 0px 18px;
+  padding-left: 40px;
+  display: none;
 }
 #content #main-nav.pag-interna ul li.active h4 a {
   color: #2d2d2d;
@@ -1806,6 +1815,12 @@ li {
 #content #footer .footer-wrp .copy-menu .footer-nav li a:hover {
   color: #666666;
 }
+/* (media-queries) */
+@media only screen and (max-width: 1440px) {
+  #content #main-nav ul {
+    margin: 30px 0 0 35px;
+  }
+}
 /*
 Version: 1.0
 Author: Nauris Kolāts | Streamline
@@ -1818,9 +1833,6 @@ img.grayscale {
   /* IE6-9 */
   -webkit-filter: grayscale(1);
 }
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
 /* ==========================================================================
    Helper classes
    ========================================================================== */

@@ -27,9 +27,9 @@ define([
 
 	var initialize = function () {
 		
-
-		Router.initialize();
 		
+		Router.initialize();
+
 
 		// ADICIONANDO LOGO SVG
 		//

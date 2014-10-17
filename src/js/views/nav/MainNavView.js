@@ -13,6 +13,8 @@ define([
 
 			this.$el.html(navTemplate);
 
+			TweenMax.to('html, body', 1, { scrollTop: 0, ease: Expo.easeInOut });
+
 		},
 
 		pagInterna: function () {
@@ -98,15 +100,53 @@ define([
 
 			$(window).on('scroll', function () {
 
-				if($(this).scrollTop() >= (window.innerHeight-350)) {
-					TweenMax.to(self.$el, 1, { left: -500, ease: Expo.easeOut });
-				}else {
-					TweenMax.to(self.$el, 1, { left: 0, ease: Expo.easeOut });
+				if(!this.$el.hasClass('.pag-interna')) {
+					if($(this).scrollTop() >= (window.innerHeight-350)) {
+						TweenMax.to(self.$el, 1, { left: -500, ease: Expo.easeOut });
+					}else {
+						TweenMax.to(self.$el, 1, { left: 0, ease: Expo.easeOut });
+					}
 				}
 
 			});
 
 		},
+
+		mostrarBtnVoltar: function () {
+
+			var btn = this.$el.find('.voltar');
+
+			TweenMax.staggerTo(this.$el.find('li:not(.voltar)'), 1, {
+				css: { transform: 'translateX(-350px)' },
+				ease: Expo.easeOut,
+				delay: 1.5
+			}, 0.1);
+			TweenMax.set(btn, { css: { transform: 'translateX(200px)', display: 'block', opacity: 0 }, delay: 1.6 });
+			TweenMax.to(btn, 1, {
+				css: { transform: 'translateX(0px)', opacity: 1 },
+				ease: Expo.easeOut,
+				delay: 1.7
+			});
+
+		},
+
+		esconderBtnVoltar: function () {
+
+			var btn = this.$el.find('.voltar');
+
+			TweenMax.set(this.$el.find('li:not(.voltar)'), { css: { transform: 'translateX(200px)', opacity: 0 } });
+			TweenMax.staggerTo(this.$el.find('li:not(.voltar)'), 1, {
+				css: { transform: 'translateX(0px)', opacity: 1 },
+				ease: Expo.easeOut,
+				delay: 1
+			}, 0.1);
+			TweenMax.to(btn, 1, {
+				css: { transform: 'translateX(-350px)' },
+				ease: Expo.easeOut,
+				delay: 1
+			});
+
+		}
 
 
 	});

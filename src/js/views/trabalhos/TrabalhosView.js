@@ -23,11 +23,9 @@ define([
 				item = Lista.find('li'),
 				itemCont = item.find('.content');
 
-
 			mainNav.render();
 			mainNav.pagInterna();
 			mainNav.itemActive('trabalhos');
-
 
 			item.each(function (i, elem) {
 
@@ -36,19 +34,14 @@ define([
 					dtl = el.find('.dtl');
 
 				el.on('mouseover', function () {
-					requestAnimationFrame(function () {
-						TweenMax.to(arrow, 0.5, { width: 32, ease: Expo.easeOut });
-						TweenMax.to(dtl, 0.7, { width: '100%', ease: Expo.easeOut, delay: 0.1 });
-					});
+					TweenMax.to(arrow, 0.5, { width: 32, ease: Expo.easeOut });
+					TweenMax.to(dtl, 0.7, { width: '100%', ease: Expo.easeOut, delay: 0.1 });
 				})
 				.on('mouseleave', function () {
 					TweenMax.killTweensOf([arrow, dtl]);
-					requestAnimationFrame(function () {
-						TweenMax.to(arrow, 0.5, { width: 0, ease: Expo.easeOut });	
-						TweenMax.to(dtl, 0.7, { width: '0%', ease: Expo.easeOut, delay: 0.1 });						
-					});
+					TweenMax.to(arrow, 0.5, { width: 0, ease: Expo.easeOut });	
+					TweenMax.to(dtl, 0.7, { width: '0%', ease: Expo.easeOut, delay: 0.1 });	
 				});
-
 
 			});
 
@@ -65,10 +58,9 @@ define([
 				loading = ITEM_ATIVO.find('.cont-loader'),
 				loadSVGTag = $('<svg id="loading-animation"></svg>');
 
-			
 			/* MOSTRANDO SUBMENU DA NAVEGAÇÃO PRINCIPAL */
 			
-			mainNav.showSubmenu('trabalhos');
+			mainNav.mostrarBtnVoltar();
 			$('.nav-list .submenu').find('li.active').removeClass('active');
 			$('.nav-list .submenu li[data-projeto="'+projeto+'"]').addClass('active');
 
@@ -133,19 +125,17 @@ define([
 
 			});
 
-
 		},
 
 		removerProjeto: function (projeto) {
-
+			
 			var self = this,
 				Lista = $(this.TRABALHOS).find('.lista'),
 				Loaded = $(this.TRABALHOS).find('.trabalho-loaded'),
 				ITEM_ATIVO = Lista.find('li[data-projeto="'+projeto+'"]'),
 				ITENS_ATIVOS = Lista.find('li.item-ativo');
 
-			$('.nav-list .submenu li[data-projeto="'+projeto+'"]').removeClass('active');
-			mainNav.closeSubmenu();
+			mainNav.esconderBtnVoltar();
 
 			TweenMax.set(Loaded, { css: { right: 'inherit', left: 168 }});
 			TweenMax.set([ITEM_ATIVO, ITENS_ATIVOS], { transform: 'translateX('+window.innerWidth+'px)' });

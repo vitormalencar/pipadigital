@@ -17,7 +17,7 @@ require.config({
 			exports: 'TweenMax'
 		},
 		royalslider: {
-			deps: ['jquery']
+			deps: 'jquery'
 		},
 		threejs: {
 			exports: 'THREE'

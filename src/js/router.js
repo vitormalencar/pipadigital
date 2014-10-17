@@ -36,14 +36,14 @@ define([
 
 	var initialize = function () {
 
-		var app_router = new AppRouter;
-		localStorage.setItem('TRABALHOS_VIEW_FIX', 0);
+		var app_router = new AppRouter,
+			primeiroAcesso = 0;
 
 		app_router.on('route:home', function() {
 			
 			var homeView = new HomeView();
 			homeView.render();
-			localStorage.setItem('TRABALHOS_VIEW_FIX', 0);
+			primeiroAcesso = 0;
 
 		});
 
@@ -51,7 +51,7 @@ define([
 
 			var culturaView = new CulturaView();
 			culturaView.render();
-			localStorage.setItem('TRABALHOS_VIEW_FIX', 0);
+			primeiroAcesso = 0;
 
 		});	
 
@@ -59,7 +59,7 @@ define([
 
 			var negociosView = new NegociosView();
 			negociosView.render();
-			localStorage.setItem('TRABALHOS_VIEW_FIX', 0);
+			primeiroAcesso = 0;
 
 		});	
 
@@ -67,56 +67,55 @@ define([
 
 			var contatoView = new ContatoView();
 			contatoView.render();
-			localStorage.setItem('TRABALHOS_VIEW_FIX', 0);
+			primeiroAcesso = 0;
 
 		});
 
 		app_router.on('route:trabalhos', function (projeto) {
 
 			var trabalhosView = new TrabalhosView(),
-				primeiroAcesso = localStorage.getItem('TRABALHOS_VIEW_FIX');
-
-			console.log(projeto);
+				loadContentDiv = $('#load-content');
 
 			if(primeiroAcesso == 0) {
 
 				trabalhosView.getTemplate();
 				trabalhosView.render();
-				localStorage.setItem('TRABALHOS_VIEW_FIX', 1);
+				primeiroAcesso = 1;
 
-				if($('#load-content').html() == '') {
-					trabalhosView.getTemplate();
-					trabalhosView.render();
-				}else{
-					if(projeto != undefined) {
-						localStorage.setItem('PROJETO_ID', projeto);
-						trabalhosView.mostrarProjeto(projeto);
-					}else{
-						trabalhosView.removerProjeto(localStorage.getItem('PROJETO_ID'));
-					}
+
+				// Isso aqui só vai funcionar se o acesso for direto no link
+
+				if(projeto != undefined) {
+
+					$('#load-content').attr('data-projeto-carregado', projeto);
+					trabalhosView.mostrarProjeto(projeto);
+
 				}
 
-			}else{
+			} else {
 
-				if($('#load-content').html() == '') {
-					trabalhosView.getTemplate();
-					trabalhosView.render();
-				}else{
-					if(projeto != undefined) {
-						localStorage.setItem('PROJETO_ID', projeto);
-						trabalhosView.mostrarProjeto(projeto);
-					}else{
-						trabalhosView.removerProjeto(localStorage.getItem('PROJETO_ID'));
-					}
+				// Aqui é onde funciona com navegação pelo menu
+
+				if(projeto != undefined) {
+
+					console.log('projeto é: ' + projeto);
+
+					$('#load-content').attr('data-projeto-carregado', projeto);
+					trabalhosView.mostrarProjeto(projeto);
+
+				} else {
+
+					trabalhosView.removerProjeto(loadContentDiv.attr('data-projeto-carregado'));
+
 				}
-				
+
 			}
 
 
 		});
 
-		// var mainNav = new MainNavView;
-		// mainNav.render();
+		var mainNav = new MainNavView;
+		mainNav.render();
 
 		var Footer = new FooterView;
 		Footer.render();

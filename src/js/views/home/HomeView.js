@@ -176,7 +176,7 @@ define([
 			$(window).on('scroll', function () {
 
 				var sct = $(this).scrollTop(),
-					blogSct = $('#blog-articles').offset().top;
+					blogSct = BlogList.offset().top;
 
 				if(blogSct <= sct) {
 					$('#blog-articles .header, #blog-articles .posts-list').addClass('fixed');
