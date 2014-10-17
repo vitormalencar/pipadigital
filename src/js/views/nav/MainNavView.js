@@ -40,8 +40,8 @@ define([
 
 				var _href = $(this).attr('href');
 				$('html, body').stop().animate({ scrollTop: $(_href).offset().top }, 500);
-				submenu.find('li.active').removeClass('active');
-				$(this).parent().addClass('active');
+				submenu.find('a.active').removeClass('active');
+				$(this).addClass('active');
 
 				return false;
 
@@ -74,14 +74,11 @@ define([
 
 				var h = closest();
 				if(!h) return;
-				
-				if(prev) {
-					prev.parent().removeClass('active');
-				}
+				if(prev) { prev.removeClass('active'); }
 
-				var li = submenu.find('li a[href="#'+ h.id +'"]');
-				li.parent().addClass('active');
-				prev = li;
+				var a = submenu.find('a[href="#'+ h.id +'"]');
+				a.addClass('active');
+				prev = a;
 
 			});
 

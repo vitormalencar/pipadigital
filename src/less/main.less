@@ -180,18 +180,20 @@ ul, li { list-style-type: none; }
                     margin: 0;
                     overflow: hidden;
 
-                    li {
+                    
+                    a {
                         width: auto;
                         display: table;
-                        clear: both;
+                        font-family: 'helv';
+                        .font(14, lighten(@cinza, 20%), -1, normal, bold);
+                        line-height: 21px;
+                        padding-left: 15px;
                         position: relative;
-
-                        &:first-child { margin-top: 10px; }
-                        &:last-child { margin-bottom: 10px; }
+                        .easeoutexpo;
 
                         &:before {
                             content: "";
-                            width: 0px;
+                            width: 0;
                             height: 1px;
                             background: @cinza;
                             position: absolute;
@@ -199,34 +201,20 @@ ul, li { list-style-type: none; }
                             .easeoutexpo;
                         }
 
-                        a {
-                            width: auto;
-                            display: table;
-                            font-family: 'helv';
-                            .font(14, lighten(@cinza, 20%), -1, normal, bold);
-                            line-height: 21px;
-                            .easeoutexpo;
-                            padding-left: 15px;
-                            &:hover {
-                                color: @azul;
-                            }
-                        }
-
                         &.active {
-
                             &:before { width: 10px; }
-
-                            a {
-                                color: @cinza;
-                                &:hover { color: @cinza; }
-                            }
+                            color: @cinza;
+                            &:hover { color: @cinza; }
                         }
 
                         &:hover {
+                            color: @azul;
                             &:before { width: 10px; }
                         }
 
                     }
+
+
                 }
 
                 &.voltar {
