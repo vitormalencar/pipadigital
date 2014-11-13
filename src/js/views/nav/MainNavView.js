@@ -97,7 +97,7 @@ define([
 
 			$(window).on('scroll', function () {
 
-				if(!this.$el.hasClass('.pag-interna')) {
+				if(!self.$el.hasClass('pag-interna')) {
 					if($(this).scrollTop() >= (window.innerHeight-350)) {
 						TweenMax.to(self.$el, 1, { left: -500, ease: Expo.easeOut });
 					}else {

@@ -24,8 +24,8 @@ define([
 				itemCont = item.find('.content');
 
 			mainNav.render();
-			mainNav.pagInterna();
 			mainNav.itemActive('trabalhos');
+			mainNav.pagInterna();
 
 			item.each(function (i, elem) {
 
@@ -137,7 +137,7 @@ define([
 
 			mainNav.esconderBtnVoltar();
 
-			TweenMax.set(Loaded, { css: { right: 'inherit', left: 168 }});
+			TweenMax.set(Loaded, { css: { right: 'inherit', left: 220 }});
 			TweenMax.set([ITEM_ATIVO, ITENS_ATIVOS], { transform: 'translateX('+window.innerWidth+'px)' });
 			TweenMax.set([ITEM_ATIVO.find('.computer, .info'), ITENS_ATIVOS.find('.computer, .info')], { transform: 'translateX('+ITEM_ATIVO.width()+'px)' });
 
@@ -145,7 +145,7 @@ define([
 				
 				TweenMax.killTweensOf([Loaded, ITEM_ATIVO, ITENS_ATIVOS, ITEM_ATIVO.find('.computer, .info'), ITENS_ATIVOS.find('.computer, .info')]);
 				TweenMax.to('html, body', 0.5, { scrollTop: ITEM_ATIVO.offset().top - 100, delay: 0.2, ease: Expo.easeInOut });
-				TweenMax.to(Loaded, 1.5, {css: { width: 0 }, delay: 0.2, ease: Expo.easeInOut });
+				TweenMax.to(Loaded, 1.5, {css: { width: 0, left: 168 }, delay: 0.2, ease: Expo.easeInOut });
 				TweenMax.to(Loaded.find('.wrp'), 1, { opacity: 0, delay: 0.8, ease: Expo.easeOut, onComplete: removeContent });
 				TweenMax.to([ITEM_ATIVO, ITENS_ATIVOS], 1, { transform: 'translateX(0px)', delay: 0.8, ease: Expo.easeOut });
 				TweenMax.to([ITEM_ATIVO.find('.computer'), ITENS_ATIVOS.find('.computer')], 1, { transform: 'translateX(0px)', delay: 0.9, ease: Expo.easeOut });

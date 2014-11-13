@@ -1,0 +1,210 @@
+.background(@cor, @projeto) {
+	@url: "../templates/trabalhos/@{projeto}/bg.jpg";
+	background: @cor url(@url) no-repeat center top;
+
+}
+
+// INACE
+
+&#t-inace {
+
+	@color1: #f1f1f1; // cinza
+	@color2: #364150; // verde escuro
+
+	.background(@color1, "inace");
+
+	.descricao {
+		h4, p { color: @color2; }
+		p { padding-top: 16px; }
+		.text { color: @color2; }
+		.btn-access { 
+			background: @color2;
+			&:hover { background: darken(@color2, 10%); }
+		}
+	}
+
+}
+
+
+
+// GOURMAR
+
+&#t-gourmar {
+
+	@color1: #3d4a8f; // roxo
+	@color2: #5c9da8; // verde
+
+	.background(white, "gourmar");
+
+	.descricao {
+		h4, p { color: @color1; }
+		p { padding-top: 16px; }
+		.text { color: @color1; }
+		.btn-access { 
+			background: @color2;
+			&:hover { background: darken(@color2, 10%); }
+		}
+	}
+	.img-1 { margin-top: 20px; }
+	.space {
+		width: 100%;
+		height: 1432px;
+	}
+
+}
+
+
+// RED DIAMONDS
+
+&#t-red {
+
+	@color1: #b60000; // vermelho escuro
+	@color2: #f40a0a; // vermelho
+
+	.background(white, "red");
+
+	.descricao {
+		h4, p { color: white; }
+		p { padding-top: 16px; }
+		.text { color: white; }
+		.btn-access { 
+			background: @color1;
+			&:hover { background: darken(@color1, 10%); }
+		}
+	}
+	.img-1 { margin-top: 20px; }
+	.space {
+		width: 100%;
+		height: 1432px;
+	}
+
+}
+
+
+// TÁ COMBINADO
+
+&#t-tacombinado {
+
+	@color1: #1c9e97; // verde
+
+	.background(#f6f6f6, "tacombinado");
+
+	.descricao {
+		h4, p { color: white; }
+		p { padding-top: 16px; }
+		.text { color: white; }
+		.btn-access { 
+			background: @color1;
+			&:hover { background: darken(@color1, 10%); }
+		}
+	}
+	.img-1 { margin-top: 20px; }
+	.space {
+		width: 100%;
+		height: 50px;
+	}
+
+}
+
+
+// TECER
+
+&#t-tecer {
+
+	@color1: #2b2e4c; // roxo
+	@color2: #005fb2; // azul
+
+	.background(white, "tecer");
+
+	.descricao {
+		h4, p { color: white; }
+		p { padding-top: 16px; }
+		.text { color: white; }
+		.btn-access { 
+			background: @color2;
+			&:hover { background: darken(@color2, 10%); }
+		}
+	}
+	.img-1 { margin-top: 20px; }
+	.bloco-text { 
+		margin-top: 980px;
+		h3, p { color: white; }
+	}
+	.space {
+		width: 100%;
+		height: 50px;
+	}
+
+}
+
+
+// METRÓPOLE
+
+&#t-metropole {
+
+	@color1: #869f53; // verde
+
+	.background(white, "metropole");
+
+	.descricao {
+		h4, p { color: white; }
+		p { padding-top: 16px; }
+		.text { color: white; }
+		.btn-access { 
+			background: @color1;
+			&:hover { background: darken(@color1, 10%); }
+		}
+	}
+	.img-1 { margin-top: 0px; }
+	.bloco-text { 
+		margin-top: 90px;
+	}
+	.processo {
+		width: 300px;
+		margin: 80px 0px 0 360px;
+
+		h3, p { color: white; }
+		p { width: 100%; float: inherit; }
+	}
+	.space {
+		width: 100%;
+		height: 50px;
+	}
+
+}
+
+
+// VEGA
+
+&#t-vega {
+
+	@color1: #454c9b; // roxo
+
+	.background(white, "vega");
+
+	.descricao {
+		h4, p { color: white; }
+		p { padding-top: 16px; }
+		.text { color: white; }
+		.btn-access { 
+			background: @color1;
+			&:hover { background: darken(@color1, 10%); }
+		}
+	}
+	.img-1 { margin-top: 0px; }
+	.bloco-text { 
+		margin-top: 1100px;
+	}
+	.processo {
+		width: 300px;
+		margin: 80px 0px 0 360px;
+
+		h3, p { color: white; }
+		p { width: 100%; float: inherit; }
+	}
+	.space {
+		width: 100%;
+		height: 50px;
+	}
+
+}

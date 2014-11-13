@@ -27,6 +27,7 @@ define([
 			this.blogPosts();
 			this.btnBlog();
 			this.featureSlider();
+			this.pipaParticles();
 
 			// NAV
 			var mainNav = new MainNavView;
@@ -126,6 +127,7 @@ define([
 				header = BlogList.find('.header'),
 				posts = BlogList.find('.posts-list'),
 				post = posts.find('.post-item');
+
 
 			// SOLUÇÃO GRAYSCALE, SUPORTADO POR TODOS OS NAVEGADORES (ATÉ O O IE6)
 			//

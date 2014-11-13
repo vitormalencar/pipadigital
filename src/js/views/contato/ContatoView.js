@@ -19,8 +19,8 @@ define([
 
 			var mainNav = new MainNavView();
 			mainNav.render();
-			mainNav.pagInterna();
 			mainNav.itemActive('contato');
+			mainNav.pagInterna();
 
 
 			var slider = $(this.CONTATO).find('.slider');

@@ -33,9 +33,9 @@ define([
 			// NAV
 			var mainNav = new MainNavView;
 			mainNav.render();
-			mainNav.pagInterna();
 			mainNav.itemActive('cultura');
 			mainNav.showSubmenu('cultura');
+			mainNav.pagInterna();
 
 
 		},

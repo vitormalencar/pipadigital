@@ -19,8 +19,8 @@ define([
 
 			var mainNav = new MainNavView();
 			mainNav.render();
-			mainNav.pagInterna();
 			mainNav.itemActive('negocios');
+			mainNav.pagInterna();
 
 
 			/* ÍCONES COMO FAZEMOS */

@@ -30,7 +30,6 @@ define([
 		
 		Router.initialize();
 
-
 		// ADICIONANDO LOGO SVG
 		//
 		var s = Snap('#logo-container');

@@ -1122,7 +1122,7 @@ li {
   margin-top: 8px;
 }
 #content #Trabalhos {
-  width: 100%;
+  width: 1460px !important;
   position: relative;
 }
 #content #Trabalhos .lista {
@@ -1261,7 +1261,7 @@ li {
   position: relative;
 }
 #content #Trabalhos .trabalho-loaded .wrp .trab-estilo .descricao {
-  width: 500px;
+  width: 340px;
   margin: 0 auto;
   padding: 90px 0;
 }
@@ -1276,7 +1276,6 @@ li {
   font-style: normal;
   font-size: 30px;
   color: white;
-  letter-spacing: -1px;
   width: auto;
   float: left;
   text-align: right;
@@ -1303,8 +1302,60 @@ li {
   line-height: 24px;
   margin-top: 15px;
 }
-#content #Trabalhos .trabalho-loaded .wrp .trab-estilo img {
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo .descricao .btn-access {
   width: auto;
+  display: table;
+  margin-top: 20px;
+  background: #b3b3b3;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo .descricao .btn-access a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0px;
+  color: #ffffff;
+  padding: 12px 30px 10px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo .img-1 {
+  margin-top: 60px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo .bloco-text {
+  width: 660px;
+  margin: 60px auto;
+  overflow: hidden;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo .bloco-text h3 {
+  width: 100%;
+  font-size: 30px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #808080;
+  line-height: 45px;
+  font-family: 'Knockout 27 A', 'Knockout 27 B';
+  font-weight: 400;
+  font-style: normal;
+  padding-bottom: 30px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo .bloco-text .t {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #808080;
+  line-height: 24px;
+  width: 46%;
+  float: left;
+  padding-bottom: 30px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo .bloco-text .t:last-child {
+  float: right;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo img {
+  max-width: 100%;
+  height: auto;
   display: table;
   margin: 0 auto;
 }
@@ -1372,6 +1423,218 @@ li {
   margin-top: 10px;
   overflow: hidden;
   background: url(../img/folio-arrow.png) no-repeat 0 0;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-inace {
+  background: #f1f1f1 url("../templates/trabalhos/inace/bg.jpg") no-repeat center top;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-inace .descricao h4,
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-inace .descricao p {
+  color: #364150;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-inace .descricao p {
+  padding-top: 16px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-inace .descricao .text {
+  color: #364150;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-inace .descricao .btn-access {
+  background: #364150;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-inace .descricao .btn-access:hover {
+  background: #212832;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-gourmar {
+  background: #ffffff url("../templates/trabalhos/gourmar/bg.jpg") no-repeat center top;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-gourmar .descricao h4,
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-gourmar .descricao p {
+  color: #3d4a8f;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-gourmar .descricao p {
+  padding-top: 16px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-gourmar .descricao .text {
+  color: #3d4a8f;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-gourmar .descricao .btn-access {
+  background: #5c9da8;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-gourmar .descricao .btn-access:hover {
+  background: #497f88;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-gourmar .img-1 {
+  margin-top: 20px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-gourmar .space {
+  width: 100%;
+  height: 1432px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-red {
+  background: #ffffff url("../templates/trabalhos/red/bg.jpg") no-repeat center top;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-red .descricao h4,
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-red .descricao p {
+  color: white;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-red .descricao p {
+  padding-top: 16px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-red .descricao .text {
+  color: white;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-red .descricao .btn-access {
+  background: #b60000;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-red .descricao .btn-access:hover {
+  background: #830000;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-red .img-1 {
+  margin-top: 20px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-red .space {
+  width: 100%;
+  height: 1432px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tacombinado {
+  background: #f6f6f6 url("../templates/trabalhos/tacombinado/bg.jpg") no-repeat center top;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tacombinado .descricao h4,
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tacombinado .descricao p {
+  color: white;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tacombinado .descricao p {
+  padding-top: 16px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tacombinado .descricao .text {
+  color: white;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tacombinado .descricao .btn-access {
+  background: #1c9e97;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tacombinado .descricao .btn-access:hover {
+  background: #14736e;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tacombinado .img-1 {
+  margin-top: 20px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tacombinado .space {
+  width: 100%;
+  height: 50px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tecer {
+  background: #ffffff url("../templates/trabalhos/tecer/bg.jpg") no-repeat center top;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tecer .descricao h4,
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tecer .descricao p {
+  color: white;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tecer .descricao p {
+  padding-top: 16px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tecer .descricao .text {
+  color: white;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tecer .descricao .btn-access {
+  background: #005fb2;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tecer .descricao .btn-access:hover {
+  background: #00447f;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tecer .img-1 {
+  margin-top: 20px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tecer .bloco-text {
+  margin-top: 980px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tecer .bloco-text h3,
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tecer .bloco-text p {
+  color: white;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tecer .space {
+  width: 100%;
+  height: 50px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-metropole {
+  background: #ffffff url("../templates/trabalhos/metropole/bg.jpg") no-repeat center top;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-metropole .descricao h4,
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-metropole .descricao p {
+  color: white;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-metropole .descricao p {
+  padding-top: 16px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-metropole .descricao .text {
+  color: white;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-metropole .descricao .btn-access {
+  background: #869f53;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-metropole .descricao .btn-access:hover {
+  background: #6a7d42;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-metropole .img-1 {
+  margin-top: 0px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-metropole .bloco-text {
+  margin-top: 90px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-metropole .processo {
+  width: 300px;
+  margin: 80px 0px 0 360px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-metropole .processo h3,
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-metropole .processo p {
+  color: white;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-metropole .processo p {
+  width: 100%;
+  float: inherit;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-metropole .space {
+  width: 100%;
+  height: 50px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-vega {
+  background: #ffffff url("../templates/trabalhos/vega/bg.jpg") no-repeat center top;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-vega .descricao h4,
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-vega .descricao p {
+  color: white;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-vega .descricao p {
+  padding-top: 16px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-vega .descricao .text {
+  color: white;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-vega .descricao .btn-access {
+  background: #454c9b;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-vega .descricao .btn-access:hover {
+  background: #353b78;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-vega .img-1 {
+  margin-top: 0px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-vega .bloco-text {
+  margin-top: 1100px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-vega .processo {
+  width: 300px;
+  margin: 80px 0px 0 360px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-vega .processo h3,
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-vega .processo p {
+  color: white;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-vega .processo p {
+  width: 100%;
+  float: inherit;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-vega .space {
+  width: 100%;
+  height: 50px;
 }
 #content #Negocios {
   position: relative;
@@ -1805,9 +2068,45 @@ li {
   color: #666666;
 }
 /* (media-queries) */
+/*
+
+	mediaqueries.less
+
+*/
 @media only screen and (max-width: 1440px) {
   #content #main-nav ul {
     margin: 30px 0 0 35px;
+  }
+}
+@media only screen and (max-width: 1366px) {
+  #content #Cultura #carreiras .wrp .jobs {
+    width: 325px;
+  }
+  #content #Cultura #carreiras .wrp .jobs li {
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-left: 1px;
+    position: relative;
+    background: #06b3e6;
+    padding: 30px 80px;
+    margin-bottom: 2px;
+  }
+  #content #Cultura #carreiras .wrp .jobs li h3 {
+    font-family: 'Knockout 27 A', 'Knockout 27 B';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    line-height: 32px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  #content #Home #blog-articles .wrp .posts-list {
+    padding: 40px;
   }
 }
 /*
