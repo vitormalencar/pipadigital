@@ -9,8 +9,8 @@ Feel free to fork and improve our website.
 Sure, your name will be on the list below! :-)
 
 ### Contributions:
-* Pipa Digital (owner)<a href="https://github.com/pipadigital">@pipadigital</a>
-* Gláuber Sampaio (creator) <a href="http://github.com/glauber-sampaio">@glauber-sampaio</a>
+* Pipa Digital (owner) – <a href="https://github.com/pipadigital">@pipadigital</a>
+* Gláuber Sampaio (creator) – <a href="http://github.com/glauber-sampaio">@glauber-sampaio</a>
 
 ### How to contribute (via pull request)
 
