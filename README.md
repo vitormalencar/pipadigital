@@ -20,7 +20,7 @@ And of course, if you want to put your hands on, you must check the following st
 1. <b>Fork this repository</b> – clone it locally and make your own changes.
 2. <b>Pull request</b> – after editing, create a pull request and describe what was the problem, what you've done and how your changes will help on the project.
 3. <b>Wait</b> – we will check your changes and see if everything is okay.
-4. <b>Done</b> – your name on our brave's list! :-)
+4. <b>Done</b> – your name on our braves list! :-)
 
 
 
