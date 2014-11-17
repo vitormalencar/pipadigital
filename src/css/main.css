@@ -1,4 +1,11 @@
 @font-face {
+  font-family: 'Knockout';
+  src: url('fonts/Knockout-HTF27-JuniorBantamwt.eot');
+  src: local('☺'), url('fonts/Knockout-HTF27-JuniorBantamwt.woff') format('woff'), url('fonts/Knockout-HTF27-JuniorBantamwt.ttf') format('truetype'), url('fonts/Knockout-HTF27-JuniorBantamwt.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'helv';
   src: url('fonts/helvlt.eot');
   src: local('☺'), url('fonts/helvlt.woff') format('woff'), url('fonts/helvlt.ttf') format('truetype'), url('fonts/helvlt.svg') format('svg');
@@ -14,8 +21,8 @@
 }
 @font-face {
   font-family: 'icomoon';
-  src: url('fonts/icomoon.eot?utqum5');
-  src: url('fonts/icomoon.eot?#iefixutqum5') format('embedded-opentype'), url('fonts/icomoon.woff?utqum5') format('woff'), url('fonts/icomoon.ttf?utqum5') format('truetype'), url('fonts/icomoon.svg?utqum5#icomoon') format('svg');
+  src: url('fonts/icomoon.eot?vbzykj');
+  src: url('fonts/icomoon.eot?#iefixvbzykj') format('embedded-opentype'), url('fonts/icomoon.woff?vbzykj') format('woff'), url('fonts/icomoon.ttf?vbzykj') format('truetype'), url('fonts/icomoon.svg?vbzykj#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -32,11 +39,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-facebook:before {
-  content: "\41";
-}
 .icon-icon_5804:before {
   content: "\42";
+}
+.icon-mark-github:before {
+  content: "\46";
+}
+.icon-facebook:before {
+  content: "\41";
 }
 .icon-twitter:before {
   content: "\43";
@@ -557,14 +567,49 @@ li {
   margin-top: 180px;
   margin-left: 152px;
 }
+#content #Home #feature .wrp .slider .sld.inace {
+  background: #2d2d2d;
+}
+#content #Home #feature .wrp .slider .sld.inace .sld-wrp .illustration {
+  width: 719px;
+  height: 481px;
+  margin-top: -122px;
+  margin-left: -664px;
+}
+#content #Home #feature .wrp .slider .sld.inace .sld-wrp .info {
+  width: 300px;
+  top: 50%;
+  right: 0;
+  left: inherit;
+  margin-top: 180px;
+  margin-left: 152px;
+}
+#content #Home #feature .wrp .slider .sld.gourmar {
+  background: #2d2d2d;
+}
+#content #Home #feature .wrp .slider .sld.gourmar .sld-wrp .illustration {
+  width: 530px;
+  height: 481px;
+  margin-top: -152px;
+  margin-left: -634px;
+}
+#content #Home #feature .wrp .slider .sld.gourmar .sld-wrp .info {
+  width: 350px;
+  top: 50%;
+  right: 0;
+  left: inherit;
+  margin-top: 180px;
+  margin-left: 152px;
+  z-index: 9999;
+}
 #content #Home #feature .wrp .slider .sld.pipa .sld-wrp .frase {
-  width: 848px;
-  height: 347px;
+  width: 692px;
+  height: 379px;
   background: url(../img/sld-home-pipa-2.png) no-repeat 0 0;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -173.5px 0 0 -424px;
+  margin: -189.5px 0 0 -346px;
 }
 #content #Home #feature .wrp .slider .sld.pipa .sld-wrp .illustration {
   width: 580px;
@@ -587,7 +632,8 @@ li {
   top: 50%;
   left: 0;
   margin-top: 205px;
-  margin-left: 152px;
+  margin-left: 380px;
+  text-align: center;
 }
 #content #Home #blog-articles {
   width: 100%;
@@ -758,6 +804,9 @@ li {
   left: 0;
   background: #adadad;
 }
+#content #Home #blog-articles .wrp .posts-list ul .post-item.sq {
+  height: 400px !important;
+}
 #content #Home #blog-articles .wrp .posts-list ul .post-item.cat-dev {
   height: 600px;
 }
@@ -787,9 +836,6 @@ li {
 }
 #content #Home #blog-articles .wrp .posts-list ul .post-item.cat-design {
   height: 600px;
-}
-#content #Home #blog-articles .wrp .posts-list ul .post-item.cat-design.sq {
-  height: 400px;
 }
 #content #Home #blog-articles .wrp .posts-list ul .post-item.cat-design .info .dtl {
   background: white;
@@ -1033,14 +1079,6 @@ li {
   width: 100%;
   height: 100%;
   position: relative;
-}
-#content #Cultura #pessoas .wrp .os-fodas li .p-img .p-img-wrp img {
-  width: 408px;
-  height: 272px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -136px 0 0 -204px;
 }
 #content #Cultura #carreiras {
   width: 100%;
@@ -1443,8 +1481,18 @@ li {
 #content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-inace .descricao .btn-access:hover {
   background: #212832;
 }
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-inace .bloco-text {
+  margin: 120px auto !important;
+}
 #content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-gourmar {
   background: #ffffff url("../templates/trabalhos/gourmar/bg.jpg") no-repeat center top;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-gourmar .descricao {
+  width: 470px;
+  padding: 90px 0 314px;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-gourmar .descricao h4 {
+  margin-top: 8px;
 }
 #content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-gourmar .descricao h4,
 #content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-gourmar .descricao p {
@@ -1461,6 +1509,9 @@ li {
 }
 #content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-gourmar .descricao .btn-access:hover {
   background: #497f88;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-gourmar .bloco-text {
+  margin: 66px auto 0px !important;
 }
 #content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-gourmar .img-1 {
   margin-top: 20px;
@@ -1488,8 +1539,11 @@ li {
 #content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-red .descricao .btn-access:hover {
   background: #830000;
 }
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-red .bloco-text {
+  margin: 111px auto;
+}
 #content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-red .img-1 {
-  margin-top: 20px;
+  margin-top: 130px;
 }
 #content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-red .space {
   width: 100%;
@@ -1523,6 +1577,9 @@ li {
 }
 #content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tecer {
   background: #ffffff url("../templates/trabalhos/tecer/bg.jpg") no-repeat center top;
+}
+#content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tecer .descricao {
+  padding: 90px 0 210px;
 }
 #content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tecer .descricao h4,
 #content #Trabalhos .trabalho-loaded .wrp .trab-estilo#t-tecer .descricao p {
@@ -1950,13 +2007,29 @@ li {
   background: url(../img/contato-sld-1.jpg) no-repeat 0 0;
   background-size: cover;
 }
+#content #Contato #slide .wrp .slider .item.sld-2 {
+  background: url(../img/contato-sld-2.jpg) no-repeat 0 0;
+  background-size: cover;
+}
+#content #Contato #slide .wrp .slider .item.sld-3 {
+  background: url(../img/contato-sld-3.jpg) no-repeat 0 0;
+  background-size: cover;
+}
+#content #Contato #slide .wrp .slider .item.sld-4 {
+  background: url(../img/contato-sld-4.jpg) no-repeat 0 0;
+  background-size: cover;
+}
+#content #Contato #slide .wrp .slider .item.sld-5 {
+  background: url(../img/contato-sld-5.jpg) no-repeat 0 0;
+  background-size: cover;
+}
 #content #Contato #slide .wrp .slider .rsBullets {
-  width: 84px;
+  width: 110px;
   position: absolute;
   z-index: 7000;
   bottom: 60px;
   left: 50%;
-  margin-left: -42px;
+  margin-left: -55px;
 }
 #content #Contato #slide .wrp .slider .rsBullets .rsBullet {
   width: 10px;

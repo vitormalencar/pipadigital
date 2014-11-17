@@ -30,6 +30,7 @@ define([
 					pauseOnHover: false,
 					stopAtAction: false
 				},
+				loop: true,
 				slidesSpacing: 0
 			})
 

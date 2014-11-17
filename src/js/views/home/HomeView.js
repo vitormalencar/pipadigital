@@ -142,6 +142,7 @@ define([
 					img = t.find('.img img'),
 					imgLeftPos = parseInt(img.css('margin-left'));
 
+				t.find('a.full').attr('target', '_blank');
 				img.addClass('grayscale').css({ opacity: 0.20 });
 
 				t.on('mouseover', function () {

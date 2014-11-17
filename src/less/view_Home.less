@@ -165,16 +165,59 @@
 					}
 					// red diamond
 
+					&.inace {
+						background: @cinza;
+
+						.sld-wrp {
+							.illustration {
+								width: 719px;
+								height: 481px;
+								margin-top: -122px;
+								margin-left: -664px;
+							}
+							.info {
+								width: 300px;
+								top: 50%; right: 0;
+								left: inherit;
+								margin-top: 180px;
+								margin-left: 152px;
+							}
+						}
+					}
+					// inace
+
+					&.gourmar {
+						background: @cinza;
+
+						.sld-wrp {
+							.illustration {
+								width: 530px;
+								height: 481px;
+								margin-top: -152px;
+								margin-left: -634px;
+							}
+							.info {
+								width: 350px;
+								top: 50%; right: 0;
+								left: inherit;
+								margin-top: 180px;
+								margin-left: 152px;
+								z-index: 9999;
+							}
+						}
+					}
+					// gourmar
+
 					
 					&.pipa {
 
 						.sld-wrp {
 							.frase {
-								width: 848px;
-								height: 347px;
+								width: 692px;
+								height: 379px;
 								background: url(../img/sld-home-pipa-2.png) no-repeat 0 0;
 								position: absolute;
-								.centerObj(848, 347);
+								.centerObj(692, 379);
 							}
 							.illustration {
 								width: 580px;
@@ -190,7 +233,8 @@
 								width: 350px;
 								top: 50%; left: 0;
 								margin-top: 205px;
-								margin-left: 152px;
+								margin-left: 380px;
+								text-align: center;
 							}
 						}
 					}
@@ -355,6 +399,8 @@
 							}
 						}
 
+						&.sq { height: 400px !important; }
+
 						// categoria development
 						&.cat-dev {
 							height: 600px;
@@ -383,7 +429,6 @@
 						&.cat-design {
 							height: 600px;
 							
-							&.sq { height: 400px; }
 
 							.info{
 								.dtl { background: white; }

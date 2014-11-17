@@ -38,6 +38,8 @@ define([
 			s.append(logo);
 		});
 
+		console.log('%c \nFala amigo! Procurando código fonte? \nAcessa aqui: https://github.com/pipadigital/pipadigital', 'color: #7c7c7c');
+
 
 	}
 

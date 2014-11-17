@@ -269,7 +269,7 @@ define([
 					colorOpacity = el.find('.color-opacity'),
 					pImg = el.find('.p-img .p-img-wrp img');
 
-				TweenMax.to(pImg, 0.1, { scale: 1.2 });
+				//TweenMax.to(pImg, 0.1, { scale: 1.2 });
 				TweenMax.to([infoTitle, infoRole, infoSocialIcons], 0.1, { css: { transform: 'translateY(15px)' } });
 
 				el

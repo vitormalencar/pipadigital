@@ -112,6 +112,7 @@ define([
 					Loaded.find('.wrp').html(data);
 
 					var bgColor = Loaded.find('.wrp .trab-estilo').css('background-color');
+					
 					Loaded.css('background-color', bgColor);
 
 					requestAnimationFrame(transitions);
